@@ -1,8 +1,9 @@
-typedef struct treeNode {
-    struct treeNode *left;
+typedef struct treeNode IntTreeNode, *IntTree;
+struct treeNode {
+    IntTree left;
     int data;
-    struct treeNode *right;
-} IntTreeNode, *IntTree;
+    IntTree right;
+};
 
 void mirror(IntTree tree) {
     if (tree == NULL) return;
