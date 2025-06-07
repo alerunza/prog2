@@ -1,0 +1,6 @@
+| Cosa                         | Perché                                          |
+| ---------------------------- | ----------------------------------------------- |
+| Verificare `malloc`          | Può restituire `NULL` se l'allocazione fallisce |
+| Sempre `free`                | Per evitare memory leak                         |
+| Mettere a `NULL` dopo `free` | Per evitare dangling pointer                    |
+| Usare `sizeof(tipo)`         | Non hardcodare i byte                           |
