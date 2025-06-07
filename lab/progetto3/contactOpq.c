@@ -116,7 +116,7 @@ char* getUrl(const ContactPtr cnt) {
 * @return 1 se i due contatti hanno lo stesso cognome e lo stesso nome, 0 altrimenti 
 */
 _Bool equalsContact(const ContactPtr cnt1, const ContactPtr cnt2) {
-    if(cnt1 == NULL && cnt2 == NULL){
+    if(cnt1 != NULL && cnt2 != NULL){
         if(strcasecmp(cnt1->surname, cnt2->surname) == 0 && strcasecmp(cnt1->name, cnt2->name) == 0){
             return 1;
         } else{
