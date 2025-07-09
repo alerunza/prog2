@@ -1,6 +1,7 @@
 int sumX(IntTree tree) {
     
     if(tree==NULL) return 0;
+    
     if(tree->left==NULL && tree->right==NULL){
         if(tree->parent==NULL)return tree->data;
         

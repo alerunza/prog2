@@ -75,6 +75,5 @@ int main(){
         
         free(cambio);
         cambio = NULL;
-        int sonogay= 
     }
 }
