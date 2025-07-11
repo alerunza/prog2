@@ -25,17 +25,57 @@ struct node {
  * - a == [1, 2, 3], n == 3  → [2, 6]
  * - a == [2, 4, 6], n == 3  → NULL
  */
-IntList raddoppiaDispariPositivi(int *a, int n);
+IntList raddoppiaDispariPositivi(int *a, int n){
+    if((a == NULL || n <= 0)){
+        return NULL;
+    }
+
+    IntList head = NULL, tail = NULL;
+
+    for (int i = 0; i < n; i++){
+        if(a[i] % 2 != 0 && a[i] > 0){
+
+            IntList newA = (IntList)malloc(sizeof(IntNode));
+
+            if(newA == NULL){
+                return NULL;
+            }
+
+            newA->data = a[i] * 2;
+            newA->next = NULL;
+
+            if(head == NULL){
+                head = tail = newA;
+            } else{
+                tail->next = newA;
+                tail = newA;
+            }
+        }
+    }
+
+    return head;
+}
 
 /**
  * Stampa la lista su una sola riga, separando gli elementi con uno spazio.
  */
-void stampa(IntList l);
+void stampa(IntList l){
+    while(l != NULL){
+        printf("%d ", l->data);
+        l = l->next;
+    }
+}
 
 /**
  * Libera la memoria occupata dalla lista.
  */
-void libera(IntList l);
+void libera(IntList l){
+    while(l != NULL){
+        IntList temp = l;
+        l = l->next;
+        free(temp);
+    }
+}
 
 /**
  * Invoca raddoppiaDispariPositivi su un array esempio,
@@ -43,6 +83,13 @@ void libera(IntList l);
  */
 int main() {
 
-    /* INSERIRE QUI IL CODICE */
+    /* int a[5] = {2, -3, 5, 4, 7}; */
+    int a[3] = {2, 4, 6};
 
+    IntList newA = raddoppiaDispariPositivi(a, 3);
+
+    stampa(newA);
+    libera(newA);
+
+    return 0;
 }
