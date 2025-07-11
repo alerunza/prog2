@@ -55,16 +55,22 @@ int eliminaSecondoDispari(IntList *lsPtr){
  */
 IntList append(IntList l, int val){
     IntList nuovo = (IntList)malloc(sizeof(IntNode));
+    
     nuovo->data = val;
     nuovo->next = NULL;
 
-    if (l == NULL) return nuovo;
+    if (l == NULL){
+        return nuovo;
+    }
 
     IntList curr = l;
+
     while (curr->next != NULL) {
         curr = curr->next;
     }
+
     curr->next = nuovo;
+
     return l;
 }
 
