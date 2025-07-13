@@ -11,3 +11,17 @@ void reverse (IntList *plst) {
         *plst = rest;
     }
 }
+
+void reverse (IntList *plst) {
+    if(*plst == NULL || (*plst)->next == NULL){
+        return;
+    }
+    
+    IntList resto = (*plst)->next;
+    
+    reverse(&resto);
+    
+    (*plst)->next->next = *plst;
+    (*plst)->next = NULL;
+    *plst = resto;
+}

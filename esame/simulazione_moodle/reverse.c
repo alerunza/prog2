@@ -16,3 +16,20 @@ void reverse (IntList *plst) {
     }
     *plst = prev;
 }
+
+void reverse (IntList *plst) {
+    if(*plst == NULL){ // lista vuota
+        return;
+    }
+    
+    IntList prev = NULL, curr = *plst, next = NULL;
+    
+    while(curr != NULL){
+        next = curr->next;
+        curr->next = prev;
+        prev = curr;
+        curr = next;
+    }
+    
+    *plst = prev;
+}
