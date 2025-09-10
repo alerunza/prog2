@@ -1,0 +1,27 @@
+file1 = fopen(fname1, "r") ---> apre il file in modalità lettura
+
+
+if(file1 == NULL) ----> errore nell'apertura del file
+
+
+fclose(file1) ----> chiudere file1
+
+
+fgetc(file1) -----> prende il carattere puntato in file1
+
+
+while ((ch1 = fgetc(file1)) != EOF && (ch2 = fgetc(file2)) != EOF) ----> guarda che non si sia arrivati
+alla fine del file (!=EOF, ovvero diverso da End Of File)
+
+
+if (ch1 != ch2) ---> confronta che i due caratteri puntati nei file siano uguali, altrimenti return 1
+
+
+
+alla fine del programma:
+
+	fclose(file1);
+	fclose(file2);
+
+	return 0;
+
